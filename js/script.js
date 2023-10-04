@@ -52,9 +52,7 @@ function usersHolderHandler(e) {
 
 function renderUsers(users) {
   const usersList = document.querySelector('.users-list');
-
   const usersListItems = users.map(u => createUserItem(u));
-
   usersList.replaceChildren(...usersListItems);
 }
 
@@ -73,10 +71,9 @@ function createUserItem({
 
   userListItem.append(
     createUserImg(src, `${firstName} ${lastName},`, gender),
-    createUserInfo(username, firstName, lastName, email, age),
-    createUserLocationBlock (city, country, state, streetName, streetNumber),
+    createUserInfo(username, `${firstName} ${lastName} , ${age}`, email),
+    createUserLocationBlock (`${city}, ${country}, ${state}`, `${streetName}, ${streetNumber}`),
   );
-
   return userListItem;
 }
 
@@ -90,9 +87,9 @@ function createUserImg(src, alt, gender) {
   };
 
   if (gender == 'male') {
-    userImgEl.style = 'box-shadow: rgb(91, 93, 221) 0 0 20px;';
+    userImgEl.style.boxShadow = 'rgb(91, 93, 221) 0 0 20px';
   } else {
-    userImgEl.style = 'box-shadow: rgb(224, 119, 119) 0 0 20px;';
+    userImgEl.style.boxShadow = 'rgb(224, 119, 119) 0 0 20px';
   }
   return userImgEl;
 }
@@ -118,15 +115,14 @@ function createEmail (email) {
   return userEmailEl;
 }
 
-function createUserInfo (username, firstName, lastName, email, age) {
+function createUserInfo (username, name, email) {
   const userInfoBlock = document.createElement('div');
   userInfoBlock.classList.add('user-info-block');
   userInfoBlock.append(
     createUserName(username),
-    createName(`${firstName} ${lastName} , ${age}`),
+    createName(name),
     createEmail(email),
   );
-
   return userInfoBlock;
 }
 
@@ -142,14 +138,13 @@ function createUserStreet (street) {
   return userStreetEl;
 }
 
-function createUserLocationBlock (city, country, state, streetName, streetNumber) {
+function createUserLocationBlock (location, street) {
   const userLocationBlock = document.createElement('div');
   userLocationBlock.classList.add('user-info-block');
   userLocationBlock.classList.add('user-location-block');
   userLocationBlock.append(
-    createUserLocation(`${country}, ${state}, ${city}`),
-    createUserStreet(`${streetName}, ${streetNumber}`),
+    createUserLocation(location),
+    createUserStreet(street),
   )
-
   return userLocationBlock;
 }
