@@ -1,0 +1,90 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Poppins, sans-serif;
+    background-color: rgb(233, 217, 230);
+  }
+  
+  h2 {
+    font-weight: 900;
+    font-size: 20px;
+  }
+
+  .users-list {
+    max-width: 900px;
+    width: 100%;
+    min-width: 320px;
+    margin: 0 auto;
+  }
+  
+  .user-list-item {
+    width: 100%;
+    padding: 20px;
+    margin: 15px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    border-radius: 5px;
+    /* background-color: rgb(255, 255, 255); */
+  }
+
+  .user-img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  
+  .user-list-item > * {
+    margin: 0 10px;
+  }
+
+  .user-info-block{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .user-location-block {
+    margin-left: auto;
+    text-align: end;
+  }
+
+  .user-email {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  button{
+    padding: 7px 15px;
+    margin: 15px 0;
+    font-size: 40px;
+    color: rgb(196, 126, 186);
+    background-color: transparent;
+    border: none;
+    transition: all ease 0.2s;
+  }
+
+  button:hover {
+    cursor: pointer;
+    color: rgb(165, 107, 156);
+  }
+
+  .btn-1 {
+    margin-left: 15px;
+  }
+
+  .btnHolder {
+    width: 100%;
+    min-width: 320px;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .user-item-color {
+    background-color: rgb(219, 194, 215);
+  }
